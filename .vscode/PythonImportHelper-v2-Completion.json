@@ -1,0 +1,249 @@
+[
+    {
+        "label": "basename",
+        "importPath": "os.path",
+        "description": "os.path",
+        "isExtraImport": true,
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "splitext",
+        "importPath": "os.path",
+        "description": "os.path",
+        "isExtraImport": true,
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "font",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "operation1",
+        "importPath": "operation",
+        "description": "operation",
+        "isExtraImport": true,
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2",
+        "importPath": "operation",
+        "description": "operation",
+        "isExtraImport": true,
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operator",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "operator",
+        "description": "operator",
+        "detail": "operator",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "MyEntry",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class MyEntry(tk.Entry):\n    def __init__(self, master=None, cnf={}, **kw):\n        super().__init__(master, cnf, **kw)\n        if \"textvariable\" not in kw:\n            self.variable = tk.StringVar()\n            self.config(textvariable=self.variable)\n        else:\n            self.variable = kw[\"textvariable\"]\n    @property\n    def value(self):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "MyListbox",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class MyListbox(tk.Listbox):\n    def pop(self):\n        if self.size() > 0:\n            x = self.get(\"end\")\n            self.delete(\"end\")\n            return x\n        else:\n            raise IndexError(\"The stack is empty\")\nclass Application(tk.Tk):\n    name = \"RevCal\"",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Application",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Application(tk.Tk):\n    name = \"RevCal\"\n    font_settings = (\"Verdana\", 16)\n    def __init__(self):\n        super().__init__(className=self.name)\n        self.option_add(\"*Font\", self.font_settings)\n        self.title(self.name)\n        self.bind(\"<Escape>\", self.destroy)\n        self.lbl = tk.Label(self, text=\"Reverzní kalkulátor\")\n        self.listbox = MyListbox(master=self)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = Application()\napp.mainloop()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "operation2",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2 = {}\noperation1 = {}\noperation2['+'] = lambda a,b: a + b\noperation2['-'] = operator.sub\noperation2['*'] = operator.mul\noperation2['/'] = operator.truediv\noperation2['//'] = operator.floordiv\noperation2['%'] = operator.mod\noperation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation1",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation1 = {}\noperation2['+'] = lambda a,b: a + b\noperation2['-'] = operator.sub\noperation2['*'] = operator.mul\noperation2['/'] = operator.truediv\noperation2['//'] = operator.floordiv\noperation2['%'] = operator.mod\noperation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2['+']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2['+'] = lambda a,b: a + b\noperation2['-'] = operator.sub\noperation2['*'] = operator.mul\noperation2['/'] = operator.truediv\noperation2['//'] = operator.floordiv\noperation2['%'] = operator.mod\noperation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2['-']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2['-'] = operator.sub\noperation2['*'] = operator.mul\noperation2['/'] = operator.truediv\noperation2['//'] = operator.floordiv\noperation2['%'] = operator.mod\noperation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2['*']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2['*'] = operator.mul\noperation2['/'] = operator.truediv\noperation2['//'] = operator.floordiv\noperation2['%'] = operator.mod\noperation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2['/']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2['/'] = operator.truediv\noperation2['//'] = operator.floordiv\noperation2['%'] = operator.mod\noperation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees\noperation1['r'] = math.radians",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2['//']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2['//'] = operator.floordiv\noperation2['%'] = operator.mod\noperation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees\noperation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2['%']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2['%'] = operator.mod\noperation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees\noperation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2['%']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2['%'] = lambda a,b: a % b\noperation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees\noperation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation2['**']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation2['**'] = lambda a,b: a ** b\noperation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees\noperation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation1['sqrt']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation1['sqrt'] = lambda a: math.sqrt(a)\noperation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees\noperation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation1['V']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation1['V'] = lambda a: math.sqrt(a)\noperation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees\noperation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation1['^']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation1['^'] = lambda a: a**2\noperation1['d'] = math.degrees\noperation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation1['d']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation1['d'] = math.degrees\noperation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation1['r']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation1['r'] = math.radians\noperation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    },
+    {
+        "label": "operation1['sin']",
+        "kind": 5,
+        "importPath": "operation",
+        "description": "operation",
+        "peekOfCode": "operation1['sin'] = math.sin",
+        "detail": "operation",
+        "documentation": {}
+    }
+]
